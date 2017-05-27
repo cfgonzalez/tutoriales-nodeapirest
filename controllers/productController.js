@@ -46,9 +46,6 @@ function saveProduct(req, res){
         {
             res.status(200).send({product: productStored});
         }
-
-
-
     });
 }
 
@@ -62,9 +59,7 @@ function updateProduct(req, res){
         if(err) res.status(500).send({message: `Error al actualizar el producto: ${err}`});
 
         res.status(200).send({product: productUpdated});
-
     });
-
 }
 
 function deleteProduct(req, res){

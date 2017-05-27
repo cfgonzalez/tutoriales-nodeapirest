@@ -1,14 +1,15 @@
 'use strict'
 
+const config = require('./config');
 const app = require('./app');
 const mongoose = require('mongoose');
-const port = process.env.PORT || 3001;
+const port = config.port;
 
 
 //---------------------------------------------------------------------------
 // Startup del server
 
-mongoose.connect('mongodb://localhost:27017/shop',(err, res)=>{
+mongoose.connect(config.db, (err, res)=>{
     
     if(err) 
     {
