@@ -17,9 +17,10 @@ const UserSchema = new Schema({
 });
 //------------------------------------------------------------------
 //Antes de salvar -- encriptar password
-UserSchema.pre('save', (next)=> {
+UserSchema.pre('save', function (next) {
 
     let user = this;
+    
     //next() pasa al siguiente middleware
     if(!user.isModified('password')) return next();
 

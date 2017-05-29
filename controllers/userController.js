@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 const User = require('../models/user');
-const tokenService = require('../services');
+const tokenService = require('../services/tokenService');
 
 function signUp(req, res){
 
@@ -17,7 +17,7 @@ function signUp(req, res){
 
         if(err) res.status(500).send({ message: `Èrror al crear el usuario ${err}`});
 
-        return res.status(200).send({ token: service.createToken(user)});
+        return res.status(200).send({ token: tokenService.createToken(user)});
     });
 }
 
