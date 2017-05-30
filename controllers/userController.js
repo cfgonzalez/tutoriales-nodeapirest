@@ -31,7 +31,7 @@ function signIn(req, res){
         req.user = user;
         res.status(200).send({
             message:' te has logueado correctamente',
-            token: service.createToken(user)
+            token: tokenService.createToken(user)
         });
     });
 }
